@@ -1,0 +1,18 @@
+<svg width="720" height="210" viewBox="0 0 720 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="orange" x1="74" y1="44" x2="645" y2="148" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffbd35"/>
+      <stop offset="0.52" stop-color="#ff6a00"/>
+      <stop offset="1" stop-color="#e83d00"/>
+    </linearGradient>
+    <filter id="logoShadow" x="0" y="0" width="720" height="210" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="8" dy="9" stdDeviation="0" flood-color="#000000" flood-opacity="1"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#ff8a00" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+  <rect x="20" y="24" width="680" height="162" rx="32" fill="#ffffff" fill-opacity="0.06"/>
+  <g filter="url(#logoShadow)">
+    <text x="50%" y="112" text-anchor="middle" fill="url(#orange)" stroke="#050505" stroke-width="12" paint-order="stroke fill" font-size="76" font-family="Arial Black, Impact, sans-serif" font-style="italic" letter-spacing="2">MELENA SHOP</text>
+    <text x="50%" y="158" text-anchor="middle" fill="#050505" stroke="#f7f7f7" stroke-width="2" paint-order="stroke fill" font-size="31" font-family="Arial Black, Impact, sans-serif" font-style="italic" letter-spacing="1">LA MEJOR SELECCION</text>
+  </g>
+</svg>

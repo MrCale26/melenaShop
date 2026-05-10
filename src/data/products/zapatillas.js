@@ -1,0 +1,73 @@
+import adidasYeezyCian from '../../assets/zapatillas/adidas/urbanas/adidas Yeezy Boost 700 Cian Azul.jpeg';
+import adidasYeezyNaranja from '../../assets/zapatillas/adidas/urbanas/yeezy 700 v2 naranja.jpeg';
+import nikeReactBlack from '../../assets/zapatillas/Nike/urbanas/Nike React infinity Run Flyknit black unisex.jpeg';
+import nikeVistaLiteNegro from '../../assets/zapatillas/Nike/urbanas/Nike Vista Lite color negro.jpeg';
+import nikeZoomXZegama from '../../assets/zapatillas/Nike/urbanas/Nike ZoomX Zegama Trail 2.jpeg';
+
+export const zapatillas = [
+  {
+    id: 1,
+    name: 'Adidas Yeezy Boost 700 Cian Azul',
+    category: 'Zapatillas',
+    tag: 'Unisex',
+    status: 'available',
+    stock: 2,
+    price: 170,
+    image: adidasYeezyCian,
+    sizes: ['37'],
+    colors: ['Gris'],
+    description: 'Zapatilla urbana con suela comoda, perfecta para looks de calle.',
+  },
+  {
+    id: 2,
+    name: 'Yeezy 700 v2 naranja',
+    category: 'Zapatillas',
+    tag: 'Nuevo',
+    status: 'available',
+    stock: 2,
+    price: 170,
+    image: adidasYeezyNaranja,
+    sizes: ['43.5'],
+    colors: ['Naranja'],
+    description: 'Zapatilla urbana con suela comoda, perfecta para looks de calle.',
+  },
+  {
+    id: 3,
+    name: 'Nike React infinity Run Flyknit black unisex',
+    category: 'Zapatillas',
+    tag: 'Unisex',
+    status: 'available',
+    stock: 1,
+    price: 170,
+    image: nikeReactBlack,
+    sizes: ['37'],
+    colors: ['Negro'],
+    description: 'Zapatilla Nike urbana lista para uso diario y outfits casuales.',
+  },
+  {
+    id: 4,
+    name: 'Nike Vista Lite color negro',
+    category: 'Zapatillas',
+    tag: 'Nuevo',
+    status: 'available',
+    stock: 1,
+    price: 170,
+    image: nikeVistaLiteNegro,
+    sizes: ['44'],
+    colors: ['Negro'],
+    description: 'Zapatilla Nike color negro para combinar con ropa urbana.',
+  },
+  {
+    id: 5,
+    name: 'Nike ZoomX Zegama Trail 2',
+    category: 'Zapatillas',
+    tag: 'Nuevo',
+    status: 'available',
+    stock: 1,
+    price: 170,
+    image: nikeZoomXZegama,
+    sizes: ['44'],
+    colors: ['Consultar'],
+    description: 'Zapatilla Nike con estilo deportivo para looks activos.',
+  },
+];
