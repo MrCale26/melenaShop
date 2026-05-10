@@ -16,7 +16,7 @@ export function Hero() {
           <a className="primary-button" href="#productos">
             Ver catalogo
           </a>
-          <a className="ghost-button" href="#checkout">
+          <a className="ghost-button" href="#armar-pedido">
             Armar pedido
           </a>
         </div>

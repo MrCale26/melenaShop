@@ -20,7 +20,7 @@ export function ProductBuilder({
         <img src={product.image} alt={product.name} />
       </div>
       <div className="builder-panel">
-        <p className="eyebrow">Elige tu producto</p>
+        <p className="eyebrow">Arma tu pedido</p>
         <h2>{product.name}</h2>
         <p>{product.description}</p>
         <strong className="builder-price">{formatPrice(product.price)}</strong>

@@ -5,6 +5,7 @@ export function CartSummary({
   subtotal,
   delivery,
   total,
+  canCheckout,
   onRemove,
   onCheckout,
   onContinueShopping,
@@ -17,7 +18,9 @@ export function CartSummary({
       </div>
 
       {cart.length === 0 ? (
-        <p className="empty-cart">El carrito esta vacio. Elige un producto para iniciar.</p>
+        <p className="empty-cart">
+          El carrito esta vacio. Vuelve a la tienda, elige una zapatilla y selecciona talla, color y cantidad.
+        </p>
       ) : (
         <div className="cart-list">
           {cart.map((item) => (
@@ -57,10 +60,15 @@ export function CartSummary({
         <button className="ghost-button checkout-button" type="button" onClick={onContinueShopping}>
           Seguir comprando
         </button>
-        <button className="primary-button checkout-button" type="button" disabled={cart.length === 0} onClick={onCheckout}>
+        <button className="primary-button checkout-button" type="button" disabled={!canCheckout} onClick={onCheckout}>
           Enviar a WhatsApp
         </button>
       </div>
+      {!canCheckout && cart.length > 0 && (
+        <small className="checkout-hint">
+          Completa tus datos de entrega para enviar el pedido.
+        </small>
+      )}
     </aside>
   );
 }

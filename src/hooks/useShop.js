@@ -13,6 +13,12 @@ export function useShop() {
   const [selectedColor, setSelectedColor] = useState('');
   const [quantity, setQuantity] = useState(1);
   const [cart, setCart] = useState([]);
+  const [customer, setCustomer] = useState({
+    name: '',
+    phone: '',
+    city: '',
+    address: '',
+  });
   const [orderStatus, setOrderStatus] = useState('');
 
   const subtotal = useMemo(
@@ -23,6 +29,13 @@ export function useShop() {
   const total = subtotal + delivery;
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
   const categories = useMemo(() => ['Todos', ...collections], []);
+  const canCheckout = Boolean(
+    cart.length > 0 &&
+      customer.name.trim() &&
+      customer.phone.trim() &&
+      customer.city.trim() &&
+      customer.address.trim(),
+  );
 
   const filteredProducts = useMemo(() => {
     const normalizedSearch = searchTerm.trim().toLowerCase();
@@ -108,9 +121,14 @@ export function useShop() {
 
   function checkoutByWhatsApp() {
     if (cart.length === 0) return;
+    if (!canCheckout) {
+      setOrderStatus('Completa nombre, celular, ciudad y direccion antes de enviar.');
+      return;
+    }
 
     const url = buildWhatsAppOrderUrl({
       cart,
+      customer,
       subtotal,
       delivery,
       total,
@@ -118,6 +136,16 @@ export function useShop() {
     });
 
     window.open(url, '_blank', 'noopener,noreferrer');
+    setCart([]);
+    setSelectedSize('');
+    setSelectedColor('');
+    setQuantity(1);
+    setCustomer({
+      name: '',
+      phone: '',
+      city: '',
+      address: '',
+    });
     setOrderStatus('Pedido enviado a WhatsApp. Coordina pago y entrega con MelenaShop.');
   }
 
@@ -127,6 +155,8 @@ export function useShop() {
     cartCount,
     categories,
     collections,
+    customer,
+    canCheckout,
     currentView,
     delivery,
     filteredProducts,
@@ -145,6 +175,7 @@ export function useShop() {
     removeFromCart,
     selectProduct,
     setAvailability,
+    setCustomer,
     setQuantity,
     setSearchTerm,
     setSelectedCategory,

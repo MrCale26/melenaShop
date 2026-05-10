@@ -17,9 +17,12 @@ export function ProductCatalog({
   return (
     <section id="productos" className="products">
       <div className="section-heading">
-        <p className="eyebrow">Favoritos</p>
+        <p className="eyebrow">Catalogo</p>
         <h2>Catalogo MelenaShop</h2>
-        <p className="catalog-count">{resultCount} productos encontrados</p>
+        <p className="catalog-count">
+          Filtra, revisa disponibilidad y elige una zapatilla para armar tu pedido.
+          <strong>{resultCount} productos encontrados</strong>
+        </p>
       </div>
 
       <CatalogFilters

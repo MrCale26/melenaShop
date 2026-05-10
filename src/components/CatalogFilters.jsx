@@ -15,7 +15,7 @@ export function CatalogFilters({
           type="search"
           value={searchTerm}
           onChange={(event) => onSearchChange(event.target.value)}
-          placeholder="Zapatillas, polera, gorra..."
+          placeholder="Busca por modelo, marca o color..."
         />
       </label>
 

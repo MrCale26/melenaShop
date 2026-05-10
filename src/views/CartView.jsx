@@ -1,4 +1,5 @@
 import { CartSummary } from '../components/CartSummary';
+import { CustomerForm } from '../components/CustomerForm';
 
 export function CartView({ shop }) {
   return (
@@ -12,15 +13,22 @@ export function CartView({ shop }) {
         </p>
       </div>
 
-      <CartSummary
-        cart={shop.cart}
-        subtotal={shop.subtotal}
-        delivery={shop.delivery}
-        total={shop.total}
-        onRemove={shop.removeFromCart}
-        onCheckout={shop.checkoutByWhatsApp}
-        onContinueShopping={() => shop.navigate('home')}
-      />
+      <div className="cart-layout">
+        <CustomerForm
+          customer={shop.customer}
+          onCustomerChange={shop.setCustomer}
+        />
+        <CartSummary
+          cart={shop.cart}
+          subtotal={shop.subtotal}
+          delivery={shop.delivery}
+          total={shop.total}
+          canCheckout={shop.canCheckout}
+          onRemove={shop.removeFromCart}
+          onCheckout={shop.checkoutByWhatsApp}
+          onContinueShopping={() => shop.navigate('home')}
+        />
+      </div>
 
       {shop.orderStatus && <div className="order-toast">{shop.orderStatus}</div>}
     </section>
