@@ -1,4 +1,10 @@
+import { STORE_WHATSAPP_NUMBER } from '../config/store';
+
 export function Footer() {
+  const whatsappUrl = `https://wa.me/${STORE_WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    'Hola MelenaShop, quiero consultar por zapatillas.',
+  )}`;
+
   return (
     <footer id="contacto" className="footer">
       <div>
@@ -10,7 +16,7 @@ export function Footer() {
         </p>
       </div>
       <div className="footer-actions">
-        <a className="primary-button" href="https://wa.me/51999999999">
+        <a className="primary-button" href={whatsappUrl}>
           WhatsApp
         </a>
         <a className="ghost-button" href="https://instagram.com/">
